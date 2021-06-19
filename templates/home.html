@@ -1,0 +1,61 @@
+<!DOCTYPE  HTML>
+<html lan="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewpart" content="width=device-width,initial-scale=1.0">
+<title>microblog</title>
+<link rel="stylesheet" type="text/css" href="static/style.css"/>
+</head>
+<body>
+<header class="navbar">
+
+<ul class="navbar__navigation">
+<li class="navbar__navigation-item">
+<a href="#" class="navbar__link">Recents</a></li>
+<li class="navbar__navigation-item"><a href="#" class="navbar__link">Calender</a></li>
+</ul>
+
+</header>
+<main class="main">
+<section><h1>Add New Entry</h1>
+<form class="form"  method="POST">
+<p class="form__input">
+<label for="entry" class="form__label">Entry Contents:</label>
+<textarea name="content" id="entry" class="form__textarea"></textarea>
+</p>
+<button type="submit" class="form__submit">Add Entry</button>
+</form>
+</section>
+<section>
+    <h1>Recent Posts</h1>
+{% for entry in entries %}
+<article class="entry">
+<div>
+<h2 class="entry__title">{{entry[0]}}</h2>
+<time class="entry__date" datetime="24-10-2019">{{entry[2]}}</time>
+</div>
+<p class="entry__content">{{entry[0]}}
+</p>
+
+</article>
+{% endfor %}
+</section>
+</main>
+<footer class="footer">
+<div class="footer__content" >
+<section class="left">
+<a class="footer_item">Made by Sugandha</a>
+<a class="footer_item">Check out my project</a>
+</section>
+<section class="right">
+<div class="footer__column">
+<a class="footer_item">Recent</a>
+<a class="footer_item">Calender</a>
+</div>
+<div class="footer__column">
+<a class="footer_item">About</a>
+<a class="footer_item">How was made</a>
+</div>
+</section>
+</div></footer>
+</body>
